@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Start Stop Car</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script> 
+            function toggle(button) {
+                text = '/api?q='
+                if (button.value == "OFF") {
+                  button.value = "ON";
+                  button.style = "color: blue"
+                  fetch(text.concat("ON"))
+                } 
+                else if (button.value == "ON"){
+                  button.value = "OFF";
+                  button.style = "color: red"
+                  fetch(text.concat("OFF"))
+                }
+            } 
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <p>Car Control</p>
+            <input type="button" id="ledButton" value="OFF" style="color:red" onclick="toggle(this);">
+        </div>
+    </body>
+
+</html>
